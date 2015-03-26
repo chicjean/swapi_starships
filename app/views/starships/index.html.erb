@@ -1,0 +1,9 @@
+<h1>Classifieds</h1>
+
+<%= @starships.count %>
+
+<ul>
+<% @starships.each do |ship| %>
+	<li><%= ship.name %></li>
+<% end %>
+</ul>

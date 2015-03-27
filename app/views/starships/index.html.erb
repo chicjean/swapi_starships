@@ -1,17 +1,68 @@
-<header>
-	<h1>Classifieds</h1>
-
-
-	<%= form_tag starships_path, method: :get do %>
-	 	<p>
-	 		<%= text_field_tag :search, params[:search] %>
-	 		<%= submit_tag "Search", name: nil %>
-	 	</p>
-	<% end %>
-</header>
+<div>
+<%= form_tag starships_path, method: :get do %>
+ 	<p id="search-bar">
+ 		<%= text_field_tag :search, params[:search], size: 70 %>
+ 		<%= submit_tag "Search", name: nil %>
+ 	</p>
+<% end %>
+</div>
 
 <div id="ship-container">
 <% @starships.each do |ship| %>
-	<div class="starship"><%= ship.name %></div>
+	<div class="starship">
+		<header class="ship-display-name"><%= ship.name %></header>
+		<ul>
+			<li>
+				<span class="attribute-title">Model: </span><%= ship.model %>
+			</li>
+			<li>
+				<span class="attribute-title">Starship Class: </span><%= ship.starship_class %>
+			</li>
+			<li>
+				<span class="attribute-title">Manufacturer: </span><%= ship.manufacturer %>
+			</li>
+			<li>
+				<span class="attribute-title">Asking Price: </span><%= number_with_delimiter(ship.cost_in_credits) %> Credits
+				<!-- What about undefined? -->
+			</li>
+		</ul>
+
+		<button class="show-specs">Find Out More</button>
+
+		<section class="ship-specs">
+			<header><%= ship.name %> Specifications</header>
+			<ul>
+				<li>
+					<span class="attribute-title">Length: </span><%= ship.length %> Meters
+				</li>
+				<li>
+					<span class="attribute-title">Max Atmosphering Speed: </span><%= ship.max_atmosphering_speed %> Meters
+					<!-- What about undefined? Then this is not an air ship-->
+				</li>
+				<li>
+					<span class="attribute-title">Required Piloting Personnel: </span><%= ship.crew %>
+				</li>
+				<li>
+					<span class="attribute-title">Maximum Passengers: </span><%= ship.passengers %>
+				</li>
+				<li>
+					<span class="attribute-title">Cargo Capacity: </span><%= number_to_human(ship.cargo_capacity) %> kg
+				</li>
+				<li>
+					<span class="attribute-title">Consumables*: </span><%= ship.passengers %>
+				</li>
+				<li>
+					<span class="attribute-title">Hyperdrive Rating: </span><%= ship.hyperdrive_rating %>
+				</li>
+				<li>
+					<span class="attribute-title">Megalights/Hour: </span><%= ship.MGLT %>
+				</li>
+			</ul>
+
+			<p class="consumable-note">
+				* Consumables are the maximum length of time that this vehicle can provide consumables for its entire crew without having to resupply.
+			</p>
+		</section>
+	</div>
 <% end %>
 </div>

@@ -1,0 +1,7 @@
+$primary-font: 'PT Serif', serif;
+
+@mixin bold-font {
+	font-family: $primary-font;
+	font-weight: 700;
+	text-transform: uppercase; 
+}

@@ -1,3 +1,86 @@
 // Place all the styles related to the Starships controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'fonts';
+
+body {
+	font-family: $primary-font;
+	font-size: 16px;
+
+	li {
+		list-style-type: none;
+		margin: 0;
+		padding:0;
+	}
+}
+
+#main-header {
+	text-align: center;
+	
+	h1 {
+		@include bold-font;
+		font-size: 3.5em;
+	}
+
+	h3 {
+		text-transform: uppercase;
+		font-size: 1.25em;
+		margin-top: 0;
+	}
+}
+
+#content {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+#search-bar { 
+	text-align: center;
+	margin-right: 35px; 
+}
+
+#ship-container {
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.starship { 
+	border: 1px solid black;
+	padding: 15px;
+	margin: 0px 25px 15px 25px;
+	width: 800px;
+}
+
+.ship-display-name {
+	@include bold-font;
+	font-size: 1.75em;
+}
+
+.attribute-title {
+	@include bold-font;
+	font-size: 1em;
+}
+
+.ship-specs {
+	padding-top: 25px;
+
+	header {
+		@include bold-font;
+	}
+}
+
+.show-specs {
+	color: red;
+	/*Move this to the right*/
+}
+
+.expanded {
+	height: auto;
+}
+
+.consumable-note {
+	font-size: .75em;
+}

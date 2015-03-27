@@ -1,9 +1,17 @@
-<h1>Classifieds</h1>
+<header>
+	<h1>Classifieds</h1>
 
-<%= @starships.count %>
 
-<ul>
+	<%= form_tag starships_path, method: :get do %>
+	 	<p>
+	 		<%= text_field_tag :search, params[:search] %>
+	 		<%= submit_tag "Search", name: nil %>
+	 	</p>
+	<% end %>
+</header>
+
+<div id="ship-container">
 <% @starships.each do |ship| %>
-	<li><%= ship.name %></li>
+	<div class="starship"><%= ship.name %></div>
 <% end %>
-</ul>
+</div>

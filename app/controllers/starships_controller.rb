@@ -1,23 +1,23 @@
 class StarshipsController < ApplicationController
 
 	def index
-		get_starships
+		@starships = get_starships
 		@class_list = get_class_list
 
 		if params[:name_search] && params[:name_search] != ""
-		 	@starships = search_ships(:name, params[:name_search])
+		 	@starships = StarshipSearch.filter_by(:name, @starships, params[:name_search])
 		end
 
 		if params[:model_search] && params[:model_search] != ""
-			@starships = search_ships(:model, params[:model_search])
+			@starships = StarshipSearch.filter_by(:name, @starships, params[:model_search])
 		end
 		
 		if params[:manufacturer_search] && params[:manufacturer_search] != ""
-			@starships = search_ships(:manufacturer, params[:manufacturer_search])
+			@starships = StarshipSearch.filter_by(:name, @starships, params[:manufacturer_search])
 		end
 
 		if params[:class_search] && params[:class_search] != ""
-		 	@starships = search_ships_by_class(params[:class_search])
+		 	@starships = StarshipSearch.filter_by(:name, @starships, params[:class_search])
 		end
 	end
 
@@ -27,25 +27,7 @@ private
 		until starships.length == Tatooine::Starship.count
 			starships.concat Tatooine::Starship.next
 		end
-		@starships = starships
-	end
-
-	def search_ships(attribute, search_params)
-		search_results = []
-			search_params.split(' ').each do |param|
-				@starships.each do |ship|
-					if ship.send(attribute).downcase.include?(param.downcase)
-						search_results << ship
-					end
-				end
-			end
-		search_results.uniq
-	end
-
-	def search_ships_by_class(search_params)
-		@starships.select do |ship|
-			ship.starship_class.downcase == search_params.downcase
-		end
+		starships
 	end
 
 	def get_class_list

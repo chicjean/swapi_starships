@@ -33,7 +33,7 @@
 							<span class="attribute-title">Length: </span><%= ship.length %> Meters
 						</li>
 						<li>
-							<span class="attribute-title">Max Atmosphering Speed: </span><%= ship.max_atmosphering_speed %> Meters
+							<span class="attribute-title">Max Atmosphering Speed: </span><%= max_atmosphering?(ship) %>
 							<!-- What about undefined? Then this is not an air ship-->
 						</li>
 						<li>

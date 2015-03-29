@@ -10,4 +10,13 @@ $(document).ready(function(){
     	($(this).text() === 'Show More') ? ($(this).text('Show Less')) : ($(this).text('Show More'));
   });
 
+  $('#clear-form').on('click', function(event) {
+  	event.preventDefault();
+  	$('#name-search').val('');
+  	$('#model-search').val('');
+  	$('#manufacturer-search').val('');
+  	$('#class-search').val('');
+  	$('#search-starships-form').submit();
+  });
+
 });

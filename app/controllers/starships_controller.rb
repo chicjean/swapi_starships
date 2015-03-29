@@ -6,7 +6,6 @@ class StarshipsController < ApplicationController
 		if params[:name_search]
 		 	@starships = search_ships_by_name(params[:name_search])
 		end
-
 		# if params[:model_search]
 		# 	@starships = search_ships_by_model(params[:model_search])
 		# end
@@ -15,7 +14,7 @@ class StarshipsController < ApplicationController
 		# 	@starships = search_ships_by_manufacturer(params[:manufacturer_search])
 		# end
 
-		if params[:class_search] != ""
+		if params[:class_search] && params[:class_search] != ""
 		 	@starships = search_ships_by_class(params[:class_search])
 		end
 

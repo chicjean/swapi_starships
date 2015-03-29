@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 == Requirements:
 Ruby Version: 2.1.3
 
@@ -25,4 +23,3 @@ Start your Rails server:
 Open your brower and navigate to: 
   localhost:3000
 Happy ship shopping!
->>>>>>> 96bf365c399e73c5a23c4412125e540d9f172968

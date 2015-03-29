@@ -6,7 +6,7 @@ Rails Version: 4.2.0
 == Setup:
 If you're using a Mac, Ruby might already be installed. In terminal, you can check by typing: 
   ruby -v
-If you don't have Ruby installed, or have an older version, you can visit https://www.ruby-lang.org/en/documentation/installation/)
+If you don't have Ruby installed, or have an older version, you can visit https://www.ruby-lang.org/en/documentation/installation/
 
 With Ruby installed type the following into the terminal. 
   gem install rails

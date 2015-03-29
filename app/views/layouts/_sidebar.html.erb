@@ -1,37 +1,24 @@
 <div>
-	<!-- <div id="sort-options">
-		<%= form_tag starships_path, method: :get do %>
-		<p>
-			SORT BY:
-			<%= select_tag :sort_by, options_for_select([
-							["Name: A-Z"], 
-							["Cost: Low-High"], 
-							["Cost: High-Low"]], params[:sort_by]), include_blank: true %>
-			<br><br>
-			<%= submit_tag "Sort", name: nil %>
-		</p>
-		<% end %>
-	</div> -->
-<%= form_tag starships_path, method: :get, id: "search-starships-form" do %>
- 	<p id="search-bar">
- 		NAME
- 		<br>
- 		<%= text_field_tag :name_search, params[:name_search], size: 25, id: "name-search" %>
- 		<br><br>
- 		MODEL
- 		<br>
- 		<%= text_field_tag :model_search, params[:model_search], size: 25, id: "model-searh" %>
- 		<br><br>
- 		MANUFACTURER
- 		<br>
- 		<%= text_field_tag :manufacturer_search, params[:manufacturer_search], size: 25, id: "manufacturer-search" %>
- 		<br><br>
- 		CLASS
- 		<br>
- 		<%= select_tag :class_search, options_for_select(@class_list, params[:class_search]), include_blank: true, id:"class-search" %>
- 		<br><br>
- 		<%= link_to "Clear Form", '#', id: "clear-form" %> |
- 		<%= submit_tag "Search", name: nil %>
- 	</p>
-<% end %>
+	<%= form_tag starships_path, method: :get, id: "search-starships-form" do %>
+	 	<p id="search-bar">
+	 		NAME
+	 		<br>
+	 		<%= text_field_tag :name_search, params[:name_search], size: 25, id: "name-search" %>
+	 		<br><br>
+	 		MODEL
+	 		<br>
+	 		<%= text_field_tag :model_search, params[:model_search], size: 25, id: "model-searh" %>
+	 		<br><br>
+	 		MANUFACTURER
+	 		<br>
+	 		<%= text_field_tag :manufacturer_search, params[:manufacturer_search], size: 25, id: "manufacturer-search" %>
+	 		<br><br>
+	 		CLASS
+	 		<br>
+	 		<%= select_tag :class_search, options_for_select(@class_list, params[:class_search]), include_blank: true, id:"class-search" %>
+	 		<br><br>
+	 		<%= link_to "Clear Form", '#', id: "clear-form" %> |
+	 		<%= submit_tag "Search", name: nil %>
+	 	</p>
+	<% end %>
 </div>

@@ -1,17 +1,9 @@
 @import 'fonts';
 @import 'flexbox';
 
-#sort-options {
-	margin: 0 15px 10px 35px; 
-	border: 1px solid black;
-	padding: 10px;
-	width: 250px;
+#search-bar {
 	text-align: center;
-}
-
-#search-bar { 
-	text-align: center;
-	margin: 0 15px 0 35px; 
+	margin: 0 15px 0 35px;
 	border: 1px solid black;
 	padding: 10px;
 	width: 250px;
@@ -23,6 +15,6 @@ a:link, a:visited, a:active {
 	text-decoration: none;
 }
 
-	a:hover {
-		text-decoration: underline;
-	}
+a:hover {
+	text-decoration: underline;
+}

@@ -3,7 +3,7 @@
 		<%= image_tag 'fail.png' %>
 		<h3>These aren't the droids you're looking for.</h3>
 	</div>
-<%else %>	
+<%else %>
 	<div id="ship-container">
 		<% @starships.each do |ship| %>
 			<div class="starship">
@@ -53,7 +53,6 @@
 							<span class="attribute-title">Megalights/Hour: </span><%= ship.MGLT %>
 						</li>
 					</ul>
-
 					<p class="consumable-note">
 						* Consumables are the maximum length of time that this vehicle can provide consumables for its entire crew without having to resupply.
 					</p>

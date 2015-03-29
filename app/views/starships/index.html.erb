@@ -19,7 +19,7 @@
 						<span class="attribute-title">Manufacturer: </span><%= ship.manufacturer %>
 					</li>
 					<li>
-						<span class="attribute-title">Asking Price: </span><%= number_with_delimiter(ship.cost_in_credits) %> Credits
+						<span class="attribute-title">Asking Price: </span><%= price_known?(ship) %>
 						<!-- What about undefined? -->
 					</li>
 				</ul>

@@ -12,4 +12,12 @@ module StarshipsHelper
 		end
 	end
 
+	def price_known?(ship)
+		if ship.cost_in_credits == "unknown"
+			"This ship is not currently available for sale."
+		else
+			"#{number_with_delimiter(ship.cost_in_credits)} Galaxtic Credit Standard"
+		end
+	end
+
 end

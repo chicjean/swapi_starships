@@ -1,7 +1,9 @@
 class StarshipsController < ApplicationController
 
 	def index
-		get starships
+		@all_starships ||= get_starships
+		@starships = @all_starships.dup
+		#How do I only make onlye one request
 
 		@class_list = get_class_list
 
@@ -80,4 +82,16 @@ private
 		end
 		class_list.uniq.sort
 	end
+
+# 	def get_search_results(attribute, search_params)
+# 		search_attribute = attribute
+# 		search_results = []
+# 		search_params.split(' ').each do |param|
+# 		@starships.each do |ship|
+# 			ship.search_attribute.downcase.include?(param.downcase)
+# 			search_results << ship
+# 		end
+# 		search_results.uniq
+# 	end
+# end
 end

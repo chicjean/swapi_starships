@@ -41,14 +41,6 @@ body {
 	width: 100%;
 }
 
-#search-bar { 
-	text-align: center;
-	margin: 0 15px 0 35px; 
-	border: 1px solid black;
-	padding: 10px;
-	width: 250px;
-}
-
 #ship-container {
 	@include flexbox;
 	-webkit-flex-direction: column;

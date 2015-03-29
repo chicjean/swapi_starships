@@ -17,8 +17,8 @@
  		<br>
  		<%= select_tag :class_search, options_for_select(@class_list, params[:class_search]), include_blank: true %>
  		<br><br>
- 	<!-- 	Add button to clear form -->
- 		<%= submit_tag "Search", name: nil %>
+ 		<%= link_to "Clear Form", root_path %> |
+ 		<%= submit_tag "Search", name: nil %> 4r[]''
  	</p>
 <% end %>
 </div>

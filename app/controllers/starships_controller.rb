@@ -15,7 +15,7 @@ class StarshipsController < ApplicationController
 		# 	@starships = search_ships_by_manufacturer(params[:manufacturer_search])
 		# end
 
-		if params[:class_search]
+		if params[:class_search] != ""
 		 	@starships = search_ships_by_class(params[:class_search])
 		end
 
@@ -32,6 +32,11 @@ private
 	end
 
 	def search_ships_by_name(search_params)
+			@starships.select do |ship| 
+				ship.name.downcase.include?(search_params.downcase)
+			end
+	end
+
 		# if search_params.include?(" ")
 		# 	search_params.split(' ').each do |param|
 		# 		@starships.select do |ship|
@@ -40,11 +45,6 @@ private
 		# 		end
 		# 	end
 		# else 
-			@starships.select do |ship| 
-				ship.name.downcase.include?(search_params.downcase)
-			end
-		# end
-	end
 
 	# def search_ships_by_model(search_params)
 	# 	@starships.select do |ship| 

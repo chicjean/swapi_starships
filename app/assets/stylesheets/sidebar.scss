@@ -1,6 +1,14 @@
 @import 'fonts';
 @import 'flexbox';
 
+#sort-options {
+	margin: 0 15px 10px 35px; 
+	border: 1px solid black;
+	padding: 10px;
+	width: 250px;
+	text-align: center;
+}
+
 #search-bar { 
 	text-align: center;
 	margin: 0 15px 0 35px; 

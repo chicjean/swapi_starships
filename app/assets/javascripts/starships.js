@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function(){
 
 	$('.ship-specs').hide();
 	$('.show-specs').text('Show More');

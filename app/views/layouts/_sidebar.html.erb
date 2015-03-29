@@ -1,4 +1,17 @@
 <div>
+	<!-- <div id="sort-options">
+		<%= form_tag starships_path, method: :get do %>
+		<p>
+			SORT BY:
+			<%= select_tag :sort_by, options_for_select([
+							["Name: A-Z"], 
+							["Cost: Low-High"], 
+							["Cost: High-Low"]], params[:sort_by]), include_blank: true %>
+			<br><br>
+			<%= submit_tag "Sort", name: nil %>
+		</p>
+		<% end %>
+	</div> -->
 <%= form_tag starships_path, method: :get do %>
  	<p id="search-bar">
  		NAME
@@ -17,8 +30,10 @@
  		<br>
  		<%= select_tag :class_search, options_for_select(@class_list, params[:class_search]), include_blank: true %>
  		<br><br>
- 		<%= link_to "Clear Form", root_path %> |
- 		<%= submit_tag "Search", name: nil %> 4r[]''
+ 		<%= link_to "Clear Form", type: :reset %> |
+ 		<%= submit_tag "Search", name: nil %>
  	</p>
 <% end %>
 </div>
+
+<!-- Fix clear form JavaScript- no button -->

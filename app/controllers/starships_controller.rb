@@ -27,12 +27,18 @@ private
 	end
 
 	def search_ships_by_name(search_params)
-		@starships.select do |ship| 
-			# search_params.split(' ').each do |param|
-			# 	debugger
+		# if search_params.include?(" ")
+		# 	search_params.split(' ').each do |param|
+		# 		@starships.select do |ship|
+		# 			ship.name.downcase.include?(param.downcase)
+		# 			debugger
+		# 		end
+		# 	end
+		# else 
+			@starships.select do |ship| 
 				ship.name.downcase.include?(search_params.downcase)
-			# end
-		end
+			end
+		# end
 	end
 
 	# def search_ships_by_model(search_params)

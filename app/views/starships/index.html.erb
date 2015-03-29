@@ -24,13 +24,13 @@
 					</li>
 				</ul>
 
-				<button class="show-specs">Find Out More</button>
+				<button class="show-specs"></button>
 
 				<section class="ship-specs">
 					<header><%= ship.name %> Specifications</header>
 					<ul>
 						<li>
-							<span class="attribute-title">Length: </span><%= ship.length %> Meters
+							<span class="attribute-title">Length: </span><%= ship.length %> meters
 						</li>
 						<li>
 							<span class="attribute-title">Max Atmosphering Speed: </span><%= max_atmosphering?(ship) %>
@@ -43,7 +43,7 @@
 							<span class="attribute-title">Maximum Passengers: </span><%= ship.passengers %>
 						</li>
 						<li>
-							<span class="attribute-title">Cargo Capacity: </span><%= number_to_human(ship.cargo_capacity) %> kg
+							<span class="attribute-title">Cargo Capacity: </span><%= number_to_human(ship.cargo_capacity).downcase %> kg
 						</li>
 						<li>
 							<span class="attribute-title">Consumables: </span><%= ship.passengers %> *

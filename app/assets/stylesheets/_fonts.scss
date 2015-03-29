@@ -1,7 +1,6 @@
-$primary-font: 'PT Serif', serif;
+$primary-font: 'Share Tech Mono', serif;
 
 @mixin bold-font {
-	font-family: $primary-font;
-	font-weight: 700;
+	font-family: 'Audiowide', cursive;
 	text-transform: uppercase; 
 }

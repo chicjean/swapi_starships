@@ -15,7 +15,7 @@
  		<br><br>
  		CLASS
  		<br>
- 		<%= select_tag options_for_select(@class_list) %>
+ 		<%= select_tag :class_search, options_for_select(@class_list, params[:class_search]), include_blank: true %>
  		<br><br>
  	<!-- 	Add button to clear form -->
  		<%= submit_tag "Search", name: nil %>

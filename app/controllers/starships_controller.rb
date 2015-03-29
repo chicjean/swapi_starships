@@ -14,6 +14,11 @@ class StarshipsController < ApplicationController
 		# if params[:manufacturer_search]
 		# 	@starships = search_ships_by_manufacturer(params[:manufacturer_search])
 		# end
+
+		if params[:class_search]
+		 	@starships = search_ships_by_class(params[:class_search])
+		end
+
 	end
 
 private 
@@ -52,6 +57,12 @@ private
 	# 		ship.manufacturer.downcase.include?(search_params.downcase)
 	# 	end
 	# end
+
+	def search_ships_by_class(search_params)
+		@starships.select do |ship|
+			ship.starship_class.downcase == search_params.downcase
+		end
+	end
 
 	def get_class_list
 		class_list = []

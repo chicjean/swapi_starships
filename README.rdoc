@@ -1,28 +1,25 @@
-== README
+== Requirements:
+Ruby Version: 2.1.3
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails Version: 4.2.0
 
-Things you may want to cover:
+== Setup:
+If you're using a Mac, Ruby might already be installed. In terminal, you can check by typing: 
+  ruby -v
+If you don't have Ruby installed, or have an older version, you can visit https://www.ruby-lang.org/en/documentation/installation/)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+With Ruby installed type the following into the terminal. 
+  gem install rails
+Verify Rails version by typing:
+  rails -v
+Clone the repo from Git Hub.
+  git clone git@github.com:chicjean/swapi_starships.git
+Change directory into swapi_starships:
+  cd swapi_starships
+Install gem dependencies:
+  bundle install
+Start your Rails server: 
+  rails s
+Open your brower and navigate to: 
+  localhost:3000
+Happy ship shopping!

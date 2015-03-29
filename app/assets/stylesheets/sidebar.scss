@@ -1,29 +1,41 @@
+@import 'colors';
 @import 'fonts';
 @import 'flexbox';
+@import 'layout-mixins';
 
-#result-count {
-	@include bold-font;
-	text-align: center;
-	border: 1px solid black;	
+@mixin side-bar {
 	width: 250px;
-	margin: 0 15px 10px 35px;
+	text-align: center;
 	padding: 10px;
 }
 
+#result-count {
+	@include bold-font;
+	@include border;
+	@include side-bar;	
+	margin: 0 15px 10px 35px;
+}
+
 #search-bar {
-	text-align: center;
+	@include border;
+	@include side-bar;
 	margin: 0 15px 0 35px;
-	border: 1px solid black;
-	padding: 10px;
-	width: 250px;
+
+	input {
+		color: $black;
+	}
 }
 
 a:link, a:visited, a:active {
 	font-size: .75em;
-	color: black;
+	color: $primary-color;
 	text-decoration: none;
 }
 
 a:hover {
 	text-decoration: underline;
+}
+
+#search-button {
+	@include button;
 }

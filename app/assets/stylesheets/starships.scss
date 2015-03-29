@@ -1,10 +1,17 @@
-@import 'fonts';
+@import 'colors';
 @import 'flexbox';
+@import 'fonts';
+@import 'layout-mixins';
+
+@mixin starships-width {
+	width: 800px;
+}
 
 body {
 	font-family: $primary-font;
 	font-size: 16px;
-	color: black;
+	color: $primary-color;
+	background-image: url('stardust.png');
 
 	li {
 		list-style-type: none;
@@ -30,50 +37,26 @@ body {
 
 #content {
 	@include flexbox;
-	-webkit-flex-direction: row;
- 	-moz-flex-direction: row;
-  -ms-flex-direction: row;
-  -webkit-flex-direction: row;
-	flex-direction: row;
+	@include flex-direction-row;
 	width: 100%;
 }
 
 #ship-container {
 	@include flexbox;
-	-webkit-flex-direction: column;
- 	-moz-flex-direction: column;
-  -ms-flex-direction: column;
-  -webkit-flex-direction: column;
-	flex-direction: column;
-	-webkit-align-items: center;
- 	-moz-align-items: center;
-  -ms-align-items: center;
-  -webkit-align-items: center;
-	align-items: center; 
-	width: 800px;
+	@include flex-direction-column;
+	@include align-items-center;
+	@include starships-width;
 	margin: 0 25px 0 25px;
 }
 
 #zero-starships-message {
+	@include border;
 	@include flexbox;
-	-webkit-flex-direction: column;
- 	-moz-flex-direction: column;
-  -ms-flex-direction: column;
-  -webkit-flex-direction: column;
-	flex-direction: column;
-	-webkit-align-items: center;
- 	-moz-align-items: center;
-  -ms-align-items: center;
-  -webkit-align-items: center;
-	align-items: center;
-	-webkit-justify-content: center;
- 	-moz-justify-content: center;
-  -ms-justify-content: center;
-  -webkit-justify-content: center;
-	justify-content:center;
-	width: 800px;
+	@include flex-direction-column;
+	@include align-items-center;
+	@include justify-content-center;	
+	@include starships-width;
 	height: 400px;
-	border: 1px solid black;
 	margin-bottom: 25px;
 
 	h3 {
@@ -82,19 +65,21 @@ body {
 }
 
 .starship {
-	border: 1px solid black;
+	@include border;
+	@include starships-width;
 	padding: 15px;
 	margin: 0px 0 15px 0;
-	width: 800px;
 }
 
 .ship-display-name {
 	@include bold-font;
+	color: $secondary-color;
 	font-size: 1.75em;
 }
 
 .attribute-title {
 	@include bold-font;
+	color: $secondary-color;
 	font-size: 1em;
 }
 
@@ -103,10 +88,12 @@ body {
 
 	header {
 		@include bold-font;
+		color: $secondary-color;
 	}
 }
 
 .show-specs {
+	@include button;
 	width: 160px;
 	float: right;
 	clear: both;

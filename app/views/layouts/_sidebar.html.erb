@@ -19,7 +19,7 @@
 	 		<%= select_tag :class_search, options_for_select(@class_list, params[:class_search]), include_blank: true, id:"class-search" %>
 	 		<br><br>
 	 		<%= link_to "Clear Form", '#', id: "clear-form" %> |
-	 		<%= submit_tag "Search", name: nil %>
+	 		<%= submit_tag "Search", name: nil, id:"search-button" %>
 	 	</p>
 	<% end %>
 </div>

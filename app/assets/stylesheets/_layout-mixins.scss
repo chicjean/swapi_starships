@@ -1,0 +1,10 @@
+@mixin border {
+	border: 2px solid $secondary-color;
+}
+
+@mixin button {
+	border-radius: 100px;
+	border: none;
+	background-color: #D3D3D3;
+	color: #000000;
+}

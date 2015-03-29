@@ -7,13 +7,13 @@ class StarshipsController < ApplicationController
 		 	@starships = search_ships_by_name(params[:name_search])
 		end
 
-		if params[:model_search]
-			@starships = search_ships_by_model(params[:model_search])
-		end
+		# if params[:model_search]
+		# 	@starships = search_ships_by_model(params[:model_search])
+		# end
 		
-		if params[:manufacturer_search]
-			@starships = search_ships_by_manufacturer(params[:manufacturer_search])
-		end
+		# if params[:manufacturer_search]
+		# 	@starships = search_ships_by_manufacturer(params[:manufacturer_search])
+		# end
 	end
 
 private 
@@ -28,23 +28,24 @@ private
 
 	def search_ships_by_name(search_params)
 		@starships.select do |ship| 
-			search_params.split(' ').each do |param|
-				ship.name.downcase.include?(param.downcase)
-			end
+			# search_params.split(' ').each do |param|
+			# 	debugger
+				ship.name.downcase.include?(search_params.downcase)
+			# end
 		end
 	end
 
-	def search_ships_by_model(search_params)
-		@starships.select do |ship| 
-			ship.model.downcase.include?(search_params.downcase) 
-		end
-	end
+	# def search_ships_by_model(search_params)
+	# 	@starships.select do |ship| 
+	# 		ship.model.downcase.include?(search_params.downcase) 
+	# 	end
+	# end
 
-	def search_ships_by_manufacturer(search_params)
-		@starships.select do |ship| 
-			ship.manufacturer.downcase.include?(search_params.downcase)
-		end
-	end
+	# def search_ships_by_manufacturer(search_params)
+	# 	@starships.select do |ship| 
+	# 		ship.manufacturer.downcase.include?(search_params.downcase)
+	# 	end
+	# end
 
 	def get_class_list
 		class_list = []

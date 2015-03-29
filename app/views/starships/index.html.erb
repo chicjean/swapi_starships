@@ -22,10 +22,14 @@
 <% end %>
 </div>
 
-<div id="ship-container">
-	<% if @starships.nil? %>
-		<p>These are not the droids you're looking for. </p>
-	<%else %>	
+
+<% if zero_starships? %>
+	<div id="zero-starships-message">
+		<%= image_tag 'fail.png' %>
+		<h3>These aren't the droids you're looking for.</h3>
+	</div>
+<%else %>	
+	<div id="ship-container">
 		<% @starships.each do |ship| %>
 			<div class="starship">
 				<header class="ship-display-name"><%= ship.name %></header>
@@ -83,5 +87,5 @@
 				</section>
 			</div>
 		<% end %>
-	<% end %>
-</div>
+	</div>
+<% end %>

@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'tatooine'
 
 describe "Viewing the list of starships" do 
 

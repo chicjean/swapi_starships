@@ -27,7 +27,7 @@ private
 		until starships.length == Tatooine::Starship.count
 			starships.concat Tatooine::Starship.next
 		end
-		starships
+		@starships = starships
 	end
 
 	def search_ships(attribute, search_params)

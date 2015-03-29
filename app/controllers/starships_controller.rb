@@ -1,7 +1,9 @@
 class StarshipsController < ApplicationController
 
 	def index
-		get_starships
+		get starships
+
+		@class_list = get_class_list
 
 		if params[:name_search] && params[:name_search] != ""
 		 	@starships = search_ships_by_name(params[:name_search])
@@ -26,8 +28,7 @@ private
 		until starships.length == Tatooine::Starship.count
 			starships.concat Tatooine::Starship.next
 		end
-		@starships = starships
-		@class_list = get_class_list
+		starships	
 	end
 
 	def search_ships_by_name(search_params)

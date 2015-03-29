@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import 'fonts';
+@import 'flexbox';
 
 body {
 	font-family: $primary-font;
@@ -31,19 +32,33 @@ body {
 }
 
 #content {
-	display: flex;
-	flex-direction: column;
+	@include flexbox;
+	-webkit-flex-direction: row;
+ 	-moz-flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+	flex-direction: row;
 	width: 100%;
 }
 
 #search-bar { 
 	text-align: center;
-	margin-right: 35px; 
+	margin: 0 15px 0 35px; 
+	border: 1px solid black;
+	padding: 10px;
 }
 
 #ship-container {
-	display:flex;
+	@include flexbox;
+	-webkit-flex-direction: column;
+ 	-moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
 	flex-direction: column;
+	-webkit-align-items: center;
+ 	-moz-align-items: center;
+  -ms-align-items: center;
+  -webkit-align-items: center;
 	align-items: center;
 }
 
@@ -73,8 +88,8 @@ body {
 }
 
 .show-specs {
-	color: red;
-	/*Move this to the right*/
+	float: right;
+	clear: both;
 }
 
 .expanded {

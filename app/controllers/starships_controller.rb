@@ -17,7 +17,7 @@ class StarshipsController < ApplicationController
 		end
 
 		if params[:class_search] && params[:class_search] != ""
-		 	@starships = StarshipSearch.filter_by(:class, @starships, params[:class_search])
+		 	@starships = StarshipSearch.filter_by(:starship_class, @starships, params[:class_search])
 		end
 	end
 

@@ -1,5 +1,5 @@
 <div>
-	<p id="result-count"><%= pluralize(@starships.length, "Ship")%></p>
+	<p id="result-count"><%= pluralize(@starships.length, "Ship")%> Found</p>
 	<%= form_tag starships_path, method: :get, id: "search-starships-form" do %>
 	 	<p id="search-bar">
 	 		NAME
@@ -8,7 +8,7 @@
 	 		<br><br>
 	 		MODEL
 	 		<br>
-	 		<%= text_field_tag :model_search, params[:model_search], size: 25, id: "model-searh" %>
+	 		<%= text_field_tag :model_search, params[:model_search], size: 25, id: "model-search" %>
 	 		<br><br>
 	 		MANUFACTURER
 	 		<br>
